@@ -2,16 +2,16 @@ const express = require("express");
 const cors = require("cors");
 
 const app = express();
-const { connectDB } = require("./mongo");
-const { disconnectDB } = require("./mongo");
+const { connectDB } = require("./src/mongo");
+const { disconnectDB } = require("./src/mongo");
 
-const albumRouter = require("./controller/albumRouter");
-const genreRouter = require("./controller/genreRouter");
-const songRouter = require("./controller/songRouter");
-const User = require("./controller/userRouter");
-const playlistRouter = require("./controller/playlistRouter");
-const artistRouter = require("./controller/artistsRouter");
-const { authRouter, configSecurity } = require("./controller/authRouter");
+const albumRouter = require("./src/controller/albumRouter");
+const genreRouter = require("./src/controller/genreRouter");
+const songRouter = require("./src/controller/songRouter");
+const User = require("./src/controller/userRouter");
+const playlistRouter = require("./src/controller/playlistRouter");
+const artistRouter = require("./src/controller/artistsRouter");
+const { authRouter, configSecurity } = require("./src/controller/authRouter");
 
 const PORT = process.env.PORT || 8080;
 app.use(
