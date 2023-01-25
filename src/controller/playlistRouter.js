@@ -39,7 +39,7 @@ playlistRouter.get("/playlist", async (req, res) => {
 
   let playlists = [];
 
-  if (req.auth.role === "ADMIN") {
+  if (req.auth.role === "ADMIN" || req.auth.role === "USER") {
     playlists = await Playlist.find(query)
       .populate({
         path: "song",
